@@ -2,13 +2,19 @@
 import { Box, styled } from '@mui/material';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 
+import {Controlled as ControlledEditor} from 'react-codemirror2';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/material.css';
+import 'codemirror/mode/xml/xml';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/css/css';
 
 const Heading = styled(Box)`
     background: #1d1e22;
     display: flex;
     padding: 9px 12px;
-    font-family: "Courier New", monospace;
-`;
+    font-family: "Courier New", monospace; 
+`; // font to CHANGE
 
 const Header= styled(Box)`
     display: flex;
@@ -39,9 +45,7 @@ const Editor = () => {
                 </Heading>
                 <CloseFullscreenIcon />
             </Header>
-            <Box>
-
-            </Box>
+            <ControlledEditor/>
         </Box>
     )
 }
