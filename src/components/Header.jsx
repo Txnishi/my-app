@@ -1,14 +1,18 @@
+import {AppBar, Toolbar, styled} from '@mui/material';
 
-import { AppBar, ToolBar } from '@mui/material';
+const Container = styled(AppBar)`
+    background: #060606;
+    height: 9vh;
+`
 
 const Header = () => {
 
     return (
-        <AppBar>
-            <ToolBar>
-                
-            </ToolBar>
-        </AppBar>
+        <Container position="static">
+            <Toolbar>
+                yo
+            </Toolbar>
+        </Container>
     )
 }
 
