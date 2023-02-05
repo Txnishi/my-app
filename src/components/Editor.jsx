@@ -9,10 +9,13 @@ import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css';
 
+import '../App.css';
+
 const Heading = styled(Box)`
     background: #1d1e22;
     display: flex;
     padding: 9px 12px;
+
     font-family: "Courier New", monospace; 
 `; // font to CHANGE
 
@@ -24,28 +27,35 @@ const Header= styled(Box)`
     font-weight: 700;
 `
 
-const Editor = () => {
+const Editor = ({ heading, icon, color }) => {
     return(
         <Box>
             <Header>
                 <Heading>
                     <Box component="span" 
                         style={{
-                            background:  'red',
+                            background:  color,
                             height: 20,
                             width: 20,
                             display: 'flex',
                             placeContent: 'center',
                             borderRadius: 5,
                             marginRight: 5,
-                            paddingBottom: 2
+                            paddingBottom: 2,
+                            color: '#000'
                         }}
-                    >/</Box>
-                    Html
+                    >{icon}</Box>
+                    {heading}
                 </Heading>
                 <CloseFullscreenIcon />
             </Header>
-            <ControlledEditor/>
+            <ControlledEditor
+                className='controlled-editor'
+                options={{
+                    theme: 'material',
+                    lineNumbers: true
+                }}
+            />
         </Box>
     )
 }
